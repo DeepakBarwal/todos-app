@@ -11,6 +11,9 @@ class TaskItem extends React.Component {
     setEditingState = (isEditing) => {
         this.setState({ isEditing });
     };
+    toggleTask = () => {
+        this.props.toggleTask(this.props.id);
+    };
     deleteTask = () => {
         this.props.deleteTask(this.props.id);
     };
@@ -39,8 +42,9 @@ class TaskItem extends React.Component {
                     </>
                 ) : (
                     <>
-                        <td>
-                            {this.props.taskItem.task}
+                        <td className='task' onClick={this.toggleTask}>
+                            <input type='checkbox' readOnly checked={this.props.taskItem.isCompleted} />
+                            <span className={this.props.taskItem.isCompleted ? 'completed' : 'not-completed'}>{this.props.taskItem.task}</span>
                         </td>
                         <td>
                             <button onClick={() => this.setEditingState(true)}>Edit</button>
