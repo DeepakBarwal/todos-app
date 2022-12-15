@@ -36,8 +36,8 @@ class TaskItem extends React.Component {
                             </form>
                         </td>
                         <td>
-                            <button type='submit' onClick={this.handleSubmit}>Save</button>
-                            <button onClick={() => this.setEditingState(false)} type='button'>Back</button>
+                            <button className='save' type='submit' onClick={this.handleSubmit}>Save</button>
+                            <button className='back' onClick={() => this.setEditingState(false)} type='button'>Back</button>
                         </td>
                     </>
                 ) : (
@@ -47,8 +47,8 @@ class TaskItem extends React.Component {
                             <span className={this.props.taskItem.isCompleted ? 'completed' : 'not-completed'}>{this.props.taskItem.task}</span>
                         </td>
                         <td>
-                            <button onClick={() => this.setEditingState(true)}>Edit</button>
-                            <button onClick={this.deleteTask}>Delete</button>
+                            <button className='edit' onClick={() => this.setEditingState(true)}>Edit</button>
+                            <button className='delete' onClick={this.deleteTask}>Delete</button>
                         </td>
                     </>
                 )

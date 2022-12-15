@@ -19,7 +19,7 @@ class CreateTask extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <input type='text' placeholder="Enter task" onChange={this.handleChange} value={this.state.task} autoFocus />
-                <button type="submit">Add</button>
+                <button className='add' type="submit">Add</button>
             </form>
         );
     };
