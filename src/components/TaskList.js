@@ -13,7 +13,7 @@ class TaskList extends React.Component {
                 </thead>
                 <tbody>
                     {this.props.tasks.map((task, index) => {
-                        return <TaskItem key={index} taskItem={task} id={index} />
+                        return <TaskItem key={index} taskItem={task} id={index} deleteTask={this.props.deleteTask} />
                     })}
                 </tbody>
             </table>

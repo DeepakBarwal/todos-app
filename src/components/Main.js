@@ -18,6 +18,10 @@ class Main extends React.Component {
         tasks.push({ task, isCompleted: false });
         this.setState({ tasks });
     };
+    deleteTask = (taskId) => {
+        tasks.splice(taskId, 1);
+        this.setState({ tasks });
+    }
     render() {
         return (
             <div>
@@ -25,7 +29,7 @@ class Main extends React.Component {
                 <div>
                     <CreateTask createTask={this.createTask} />
                     <br />
-                    <TaskList tasks={this.state.tasks} />
+                    <TaskList tasks={this.state.tasks} deleteTask={this.deleteTask} />
                 </div>
             </div>
         )
