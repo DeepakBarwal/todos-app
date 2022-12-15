@@ -12,7 +12,7 @@ class CreateTask extends React.Component {
     };
     handleSubmit = e => {
         e.preventDefault();
-        this.props.createTeak(this.state.task);
+        this.props.createTask(this.state.task);
         this.setState({ task: '' });
     };
     render() {
