@@ -25,7 +25,7 @@ class Main extends React.Component {
                 <div>
                     <CreateTask createTask={this.createTask} />
                     <br />
-                    <TaskList />
+                    <TaskList tasks={this.state.tasks} />
                 </div>
             </div>
         )
